@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test WebAssembly</title>
+
+
+    <script src="wasm_exec.js"></script>
+    <script src="utils.js"></script>
+    <script src="vconsole.min.js"></script>
+    <script>
+      // VConsole will be exported to `window.VConsole` by default.
+      var vConsole = new window.VConsole();
+    </script>
+
+</head>
+<body>
+    <label for="item_num">指定要计算的斐波那契数列项：</label>
+    <input id="item_num" type="text" value="42"><p></p>
+    <button onclick="calc_js()">使用 JavaScript 计算</button><p></p>
+    <button onclick="calc_go()">使用 Go WebAssembly 计算</button><p></p>
+    <button onclick="calc_rust_fetch()">使用 Rust WebAssembly 计算（Fetch 加载）</button><p></p>
+    <button onclick="calc_rust_xhr()">使用 Rust WebAssembly 计算（XHR 加载）</button><p></p>
+</body>
+</html>
